@@ -1,15 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <string>
-
+#include <string> 
 
 using namespace std;
 
 const int MAX = 1000;
 int nElementos;
 int cores[MAX];
-int Verificar(int Array[][1000], int nElementos, int maiorGrau){
+int Verificando(int Array[][1000], int nElementos, int maiorGrau){
 
     int menorCor = 1;
 
@@ -49,7 +48,7 @@ int MaiorValor(int Grau[], int nElementos) {
 }
 
 
-void Colorir(int Grau[], int Array[][1000], int nElementos){
+void Colorindo(int Grau[], int Array[][1000], int nElementos){
     int numeroDeCores = 0;
     int vertices = nElementos;
     int maiorGrau;
@@ -59,7 +58,7 @@ void Colorir(int Grau[], int Array[][1000], int nElementos){
       cout << "oi1" << endl;
       cout << "maiorGrau "<< maiorGrau << endl;
       Grau[maiorGrau] = 0;
-      int menorCor = Verificar(Array, nElementos, maiorGrau);
+      int menorCor = Verificando(Array, nElementos, maiorGrau);
       cout << "oi2" << endl;
       cores[maiorGrau] = menorCor;
       vertices--;
@@ -116,7 +115,7 @@ int main() {
     }
 
 
-    Colorir(Grau, Array, nElementos);
+    Colorindo(Grau, Array, nElementos);
     for (int i = 1; i <= nElementos; ++i)
     {
        cout << i << "  " << cores[i] << endl;
